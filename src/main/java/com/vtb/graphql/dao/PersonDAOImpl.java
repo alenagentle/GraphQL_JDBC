@@ -32,7 +32,7 @@ public class PersonDAOImpl implements PersonDAO {
 
     @Override
     public Person getPersonById(Long id) {
-        return jdbcTemplate.queryForObject(SQL_FIND_PERSON, new Object[] { id }, new PersonMapper());
+        return jdbcTemplate.queryForObject(SQL_FIND_PERSON, new PersonMapper(), id);
     }
 
     @Override

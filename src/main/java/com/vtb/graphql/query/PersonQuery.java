@@ -16,7 +16,10 @@ public class PersonQuery implements GraphQLQueryResolver {
     private final PersonDAO personDAO;
 
     public List<Person> getPersons(final int count) {
-        return this.personDAO.getAllPersons().stream().limit(count).collect(Collectors.toList());
+        return this.personDAO.getAllPersons()
+                .stream()
+                .limit(count)
+                .collect(Collectors.toList());
     }
 
     public Person getPerson(final Long id) {

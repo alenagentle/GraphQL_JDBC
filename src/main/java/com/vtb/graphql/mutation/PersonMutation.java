@@ -12,7 +12,9 @@ public class PersonMutation implements GraphQLMutationResolver {
 
     private final PersonDAO personDAO;
 
-    public Person createPerson(final String age, final String firstName, final String lastName) {
+    public Person createPerson(final String age,
+                               final String firstName,
+                               final String lastName) {
         Person person = new Person();
         person.setAge(age);
         person.setFirstName(firstName);
@@ -22,7 +24,10 @@ public class PersonMutation implements GraphQLMutationResolver {
         return person;
     }
 
-    public Person updatePerson(final Long id, final String age, final String firstName, final String lastName) {
+    public Person updatePerson(final Long id,
+                               final String age,
+                               final String firstName,
+                               final String lastName) {
         Person person = personDAO.getPersonById(id);
         person.setAge(age);
         person.setFirstName(firstName);
